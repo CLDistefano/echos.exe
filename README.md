@@ -17,7 +17,7 @@ Echos.exe emulates useful features of the *nix echo command and has some additio
 
 `   -h /?  --help     display this help and exit`
 
-`   -v     --version  display this help and exit`
+`   -v     --version  display version information and exit`
    
 If -e is in effect, the following sequences are recognized:
 
