@@ -335,6 +335,7 @@ int main(int argc, char *argv[]) {
 				break;
 		}
 	}
+	// The rubber meets the road:
 	outstr[j + 1] = '\0';
 	if (!utf16 && strstr(outstr, "\x1B[") == NULL && \
 			strstr(outstr, "\x0B") == NULL) {
