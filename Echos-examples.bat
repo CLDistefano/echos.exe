@@ -4,7 +4,7 @@
 setlocal
 cls
 echo Echos.exe -- Usage examples
-echo C.L.Distefano rev. 2025-05-26
+echo C.L.Distefano rev. 2025-05-27
 echo:
 
 set echos=%~dp0echos.exe
@@ -19,15 +19,12 @@ set command=echos The quick brown fox jumped over the lazy dog.
 %echos% -e Command: \d32\e[7m%command%\e[0m\d32
 %echos% -e -n Output : \d32
 %command%
-%echos% -e \n
 pause
 
 %echos% -e \nPlain text, no trailing newline (option -n):
 set command=echos -n The quick brown fox jumped over the lazy dog.
 %echos% -e Command: \d32\e[7m%command%\e[0m\d32
-%echos% -e -n Output : \d32
-%command%
-%echos% -e \n
+%echos% -e -n Output : \d32 %command%
 pause & cls
 
 %echos% Escape codes: Backslash (\\)
@@ -77,7 +74,8 @@ set command=echos -e It's\vall\vdownhill\vfrom\vhere\v!!!\d32
 %echos% -e -n \n
 pause & cls
 
-%echos% Escape codes: decimal Ascii characters (\d[N[N]]N)
+for /F "tokens=*" %%A in ('chcp') do set cdpg=%%A
+%echos% Escape codes: decimal Ascii characters, for current a%cdpg:~1% (\d[N[N]]N)
 set command=echos -e 128=\\d128 129=\\d129 130=\\d130 ... 253=\\d253 254=\\d254 255=\\d255\e[0m\d32
 %echos% -e Command: \d32\e[7m%command%\e[0m\d32
 set command=echos -e 128=\d128 129=\d129 130=\d130 ... 253=\d253 254=\d254 255=\d255
