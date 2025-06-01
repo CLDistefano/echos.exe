@@ -1,7 +1,7 @@
 /*
    echos.c
    echos.exe 1.0.1
-	 C.L.Distefano 2025-05-27T17:05
+   C.L.Distefano 2025-05-27T17:05
    Enhanced ECHO command for Windows
 */
 #include <stdio.h>
